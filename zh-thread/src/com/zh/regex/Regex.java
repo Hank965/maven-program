@@ -13,7 +13,7 @@ public class Regex {
 
     public static void main(String[] args) {
         String isNeedTestData = "我的主邮箱是：s123saix@qq.cLom，第二邮箱是：10010@per.com.cn";
-//        email(isNeedTestData);
+        email(isNeedTestData);
         System.out.println("数据[s111aix@qq.cLo]是email格式吗？"+isEmail("s111aix@qq.com.cn"));
     }
 
@@ -23,13 +23,13 @@ public class Regex {
      * @param data 要匹配的数据
      */
     private static void email(String data){
-        String regex = "[\\w\\d]+@[\\w\\d]+\\.[a-zA-Z]+\\.?[a-zA-Z]+";
+        String regex = "[\\w]+@[\\w]+\\.[a-zA-Z]+\\.?[a-zA-Z]+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(data);
         StringBuilder stringBuilder = new StringBuilder();
         while (matcher.find()){
             sbAppend(matcher.group(0), stringBuilder);
-            System.out.println("从数据["+data +"]找到的邮箱号数据是：\n "+stringBuilder);
+            System.out.println("从数据["+data +"]\n    找到的邮箱号数据是："+stringBuilder);
         }
     }
     private static boolean isEmail(String data){
