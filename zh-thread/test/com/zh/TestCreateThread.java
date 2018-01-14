@@ -8,8 +8,9 @@ package com.zh;
 public class TestCreateThread {
 
     public static void main(String[] args) {
-        CreateThread createThread = new CreateThread();
-        System.out.println(Thread.currentThread().getName());
-        createThread.getCurrentThreadName();
+        new CreateThread().start();
+        while (true) {
+            System.out.println(Thread.currentThread().getName());
+        }
     }
 }
